@@ -1,0 +1,11 @@
+.Nav {
+    background-color: aqua;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .Nav a {
+    margin-left: 40%;
+    margin-top: 2%;
+  }
