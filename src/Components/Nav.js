@@ -6,7 +6,7 @@ function Nav() {
       <Link to="/">
         <p>Budget App</p>
       </Link>
-      <Link to="/transactions/new">
+      <Link to="/transaction/new">
         <h6>NEW TRANSACTION</h6>
       </Link>
     </div>
