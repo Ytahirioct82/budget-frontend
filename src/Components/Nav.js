@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <div className="Nav">
-      <p>Budget App</p>
-      <Link to="/amount/new">
+      <Link to="/">
+        <p>Budget App</p>
+      </Link>
+      <Link to="/transactions/new">
         <h6>NEW TRANSACTION</h6>
       </Link>
     </div>

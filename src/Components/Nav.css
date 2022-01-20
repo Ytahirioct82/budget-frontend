@@ -2,27 +2,29 @@
   background-color: rgb(185, 254, 230);
   height: 100px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 
 .Nav a {
   margin-left: 40%;
   margin-top: 5%;
+  text-decoration: none;
 }
 
-.Nav p {
+.Nav a p {
   font-size: 80px;
   font-style: italic;
-  margin-top: 0%;
-  margin-left: 15%;
+  margin-top: -30px;
+  margin-left: -100px;
+  width: fit-content;
 }
 
 .Nav h6 {
   font-size: 40px;
   font-style: italic;
-  margin-top: -18px;
+  margin-top: -40px;
   border: solid 1px rgb(234, 182, 198);
-  width: 90%;
+  width: 68%;
   padding-left: 5%;
   border-radius: 5px;
   text-decoration: none;

@@ -1,28 +1,26 @@
 .transactions {
-  border: solid 3px green;
+  margin-top: 50px;
 }
 
 .transaction {
-  border: solid 3px red;
   display: grid;
-  grid-template-columns: 2fr 3fr 2fr;
+  grid-template-columns: 2fr 3fr 2fr 1fr;
   width: 70%;
   margin: auto;
 }
 
 .transaction p,
 .transaction a {
-  border: solid 3px blue;
   width: fit-content;
   height: fit-content;
   margin: auto;
   font-size: 30px;
 }
 .transactions h5 {
-  border: solid 3px yellow;
   width: fit-content;
   height: fit-content;
   font-size: 60px;
   font-style: italic;
   margin: auto;
+  margin-bottom: 40px;
 }

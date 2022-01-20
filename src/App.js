@@ -2,7 +2,8 @@ import "./App.css";
 import "./Components/Nav.css";
 import "./Components/Transactions.css";
 import Transactions from "./Components/Transactions.js";
-// import "./Components/NewLog.css";
+import NewTransaction from "./Components/NewTransaction";
+import "./Components/NewTransaction.css";
 // import "./Components/EditLog.css";
 // import "./Components/LogDetails.css";
 import Nav from "./Components/Nav";
@@ -18,8 +19,8 @@ function App() {
       <main>
         <Routes>
           <Route exact path="/" element={<Transactions />} />
-          {/* <Route path="/logs" element={<LogsTitles />} />
-          <Route path="/logs/new" element={<NewLog />} />
+          <Route path="/transactions/new" element={<NewTransaction />} />
+          {/*<Route path="/logs/new" element={<NewLog />} />
           <Route path="/logs/:index" element={<LogDetails />} />
           <Route path="/logs/:index/edit" element={<EditLog />} /> */}
         </Routes>
