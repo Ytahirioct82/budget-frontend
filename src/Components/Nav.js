@@ -1,10 +1,12 @@
-import "./Nav.css";
+import { Link } from "react-router-dom";
 
 function Nav() {
   return (
     <div className="Nav">
-      <a href="/amount">Budget List</a>
-      <a href="/amount/new">Add New Budget</a>
+      <p>Budget App</p>
+      <Link to="/amount/new">
+        <h6>NEW TRANSACTION</h6>
+      </Link>
     </div>
   );
 }
