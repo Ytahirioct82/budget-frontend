@@ -1,18 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function NewTransaction() {
   const URL = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
-  const [Trans, setTrans] = useState([
-    {
-      date: "",
-      name: "",
-      amount: "",
-      from: "",
-    },
-  ]);
+  const [Trans, setTrans] = useState([]);
 
   const HandleChange = (event) => {
     setTrans({ ...Trans, [event.target.name]: event.target.value });
@@ -20,8 +13,10 @@ function NewTransaction() {
 
   const HandleSubmit = (event) => {
     event.preventDefault();
+    console.log(Object.keys(Trans).length);
     console.log(Object.keys(Trans));
-    Object.keys(Trans).length === 5 && axios.post(`${URL}/transactions`, Trans).then(() => navigate(`/`));
+    console.log(Trans);
+    Object.keys(Trans).length === 4 && axios.post(`${URL}/transactions`, Trans).then(() => navigate(`/`));
   };
 
   return (

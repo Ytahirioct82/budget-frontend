@@ -8,6 +8,7 @@ function Transactions() {
   const [Trans, setTrans] = useState([]);
 
   useEffect(() => {
+    console.log(URL);
     axios
       .get(`${URL}/transactions`)
       .then((response) => {
@@ -17,6 +18,7 @@ function Transactions() {
       })
       .catch((error) => console.log("catch", error));
   }, []);
+  console.log(Trans);
   const HandleDelete = (event) => {
     axios.delete(`${URL}/transactions/${event.target.id}`, Trans[event.target.id]);
     setTrans(Trans.filter((obj) => obj.id != event.target.id));
