@@ -1,7 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { tab } from "@testing-library/user-event/dist/tab";
 
 function Transactions() {
   const URL = process.env.REACT_APP_API_URL;
@@ -20,15 +19,15 @@ function Transactions() {
   }, []);
   const HandleDelete = (event) => {
     axios.delete(`${URL}/transactions/${event.target.id}`, Trans[event.target.id]);
-    setTrans(Trans.filter((obj, i) => i != event.target.id));
+    setTrans(Trans.filter((obj) => obj.id != event.target.id));
   };
   const result = Trans.map((element, i) => {
     return (
       <div key={i} className="transaction">
         <p>{element.date} </p>
-        <Link to={`/transaction/${i}`}>{element.name}</Link>
+        <Link to={`/transaction/details/${element.id}`}>{element.name}</Link>
         <p>{element.amount}</p>
-        <button id={i} onClick={HandleDelete}>
+        <button id={element.id} onClick={HandleDelete}>
           Remove
         </button>
       </div>
@@ -36,9 +35,19 @@ function Transactions() {
   });
   const total = Trans.reduce((a, b) => a + Number(b.amount), 0);
 
+  let sum = "white";
+  if (total < 0) {
+    sum = "red";
+  }
+  if (total > 1000) {
+    sum = "green";
+  }
+
   return (
     <div className="transactions">
-      <h5>{`Bank Account Total: $${total}`}</h5>
+      <h5>
+        Bank Account Total: <span className={sum}>{`$${total}`}</span>
+      </h5>
       {result}
     </div>
   );

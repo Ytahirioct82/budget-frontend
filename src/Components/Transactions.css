@@ -24,3 +24,85 @@
   margin: auto;
   margin-bottom: 40px;
 }
+
+.red {
+  color: red;
+}
+.white {
+  color: rgb(187, 182, 182);
+}
+.green {
+  color: lightgreen;
+}
+
+@media only screen and (max-width: 540px) {
+  .transactions h5 {
+    width: fit-content;
+    height: fit-content;
+    font-size: 35px;
+    font-style: italic;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  .transaction p,
+  .transaction a {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-size: 25px;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .transactions h5 {
+    width: fit-content;
+    height: fit-content;
+    font-size: 30px;
+    font-style: italic;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  .transaction p,
+  .transaction a {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .transactions h5 {
+    width: fit-content;
+    height: fit-content;
+    font-size: 25px;
+    font-style: italic;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  .transaction p,
+  .transaction a {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 280px) {
+  .transactions h5 {
+    width: fit-content;
+    height: fit-content;
+    font-size: 20px;
+    font-style: italic;
+    margin: auto;
+    margin-bottom: 40px;
+  }
+  .transaction p,
+  .transaction a {
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    font-size: 7px;
+  }
+}

@@ -3,15 +3,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
 function EditTransaction() {
-  const { index } = useParams();
   const URL = process.env.REACT_APP_API_URL;
   const navigate = useNavigate();
+  const { index } = useParams();
   const [Trans, setTrans] = useState([]);
 
   useEffect(() => {
     axios
       .get(`${URL}/transactions/${index}`)
       .then((response) => {
+        console.log(response);
+        console.log(response.data);
         setTrans(response.data);
       })
       .catch((error) => console.log("catch", error));
@@ -23,7 +25,8 @@ function EditTransaction() {
 
   const HandleSubmit = (event) => {
     event.preventDefault();
-    axios.put(`${URL}/transactions/${index}`, Trans).then(() => navigate(`/`));
+    !Object.values(Trans).includes("") &&
+      axios.put(`${URL}/transactions/${index}`, Trans).then(() => navigate(`/transaction/details/${index}`));
   };
 
   return (
@@ -58,7 +61,7 @@ function EditTransaction() {
         <input type="text" value={Trans.from} name="from" placeholder="from" onChange={HandleChange} />
         <br />
         <br />
-        <button type="submit">EDIT ITEM</button>
+        <button type="submit">Edit NEW ITEM</button>
       </form>
     </div>
   );

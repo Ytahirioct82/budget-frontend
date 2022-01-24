@@ -20,7 +20,8 @@ function NewTransaction() {
 
   const HandleSubmit = (event) => {
     event.preventDefault();
-    axios.post(`${URL}/transactions`, Trans).then(() => navigate(`/`));
+    console.log(Object.keys(Trans));
+    Object.keys(Trans).length === 5 && axios.post(`${URL}/transactions`, Trans).then(() => navigate(`/`));
   };
 
   return (
